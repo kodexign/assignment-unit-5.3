@@ -1,23 +1,32 @@
-console.log('***** Music Collection *****')
+console.log('***** Music Collection *****');
 // Safe Zone -- Write code below this line
 let myCollection = [];
 
-let newAlbum = {
-  title: ,
-  artist: ,
-  yearPublished: ,
-
-}
-
 
 function addToCollection ( collection, title, artist, yearPublished){
-  for(let){
-    myCollection.push();
-  }
+  let newAlbum = {
+    title,
+    artist,
+    yearPublished,
+  };
+  myCollection.push(newAlbum);
+  return newAlbum;
 }
-console.log('My collection:', myCollection);
 
+let album1 = addToCollection('Remember','Big Bang', 2008);
+console.table('My Collecion:', album1);
+let album2 = addToCollection('MADE', 'Big Bang', 2016);
+console.table('My Collecion:', album2);
+let album3 = addToCollection('Its Hyorish', 'Lee Hyori', 2008);
+console.table('My Collecion:', album3);
+let album4 = addToCollection('Still Fantasy', 'Jay Chou', 2006);
+console.table('My Collecion:', album4);
+let album5 = addToCollection('In a World Like This', 'Backstreet Boys', 2013);
+console.table('My Collecion:', album5);
+let album6 = addToCollection('Fallen Embers',  'Illenium', 2021);
+console.table('My Collecion:', album6);
 
+console.table('my collection:', myCollection);
 
 
 
