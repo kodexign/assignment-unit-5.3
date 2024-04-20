@@ -8,32 +8,28 @@ function addToCollection(collection, title, artist, yearPublished) {
     title,
     artist,
     yearPublished,
-  };
-  myCollection.push(newAlbum);
-  return newAlbum;
-}
+  }
+  collection.push(newAlbum);
+  return newAlbum; 
+};
 
-let album1 = addToCollection('Remember', 'Big Bang', 2008);
-console.log('Album 1:', album1);
-let album2 = addToCollection('MADE', 'Big Bang', 2016);
-console.table('album 2:', album2);
-let album3 = addToCollection('Its Hyorish', 'Lee Hyori', 2008);
-console.log('album 3:', album3);
-let album4 = addToCollection('Still Fantasy', 'Jay Chou', 2006);
-console.log('album 4:', album4);
-let album5 = addToCollection('In a World Like This', 'Backstreet Boys', 2013);
-console.log('album 5:', album5);
-let album6 = addToCollection('Fallen Embers', 'Illenium', 2021);
-console.log('album 6:', album6);
+
+console.log('Album 1:', addToCollection(myCollection, 'Remember', 'Big Bang', 2008));
+console.table('album 2:', addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
+console.log('album 3:', addToCollection( myCollection,'Its Hyorish', 'Lee Hyori', 2008));
+console.log('album 4:', addToCollection(myCollection,'Still Fantasy', 'Jay Chou', 2006));
+console.log('album 5:', addToCollection(myCollection,'In a World Like This', 'Backstreet Boys', 2013));
+console.log('album 6:', addToCollection(myCollection,'Fallen Embers', 'Illenium', 2021));
 
 console.log('my collection:', myCollection);
 
-function showCollection(collection) {
-  for (let album of collection) {
-    console.log(${album.title} +'by' + ${album.artist} + 'published in' + ${yearPublished});
+// function showCollection(collection) {
+//   for (let album in collection) {
+//     console.log('showing collection:', `${album.title} by ${album.artist} published in ${album.yearPublished}`);
 
-  }
-}
+//   }
+// }
+// console.log('show collection:', showCollection());
 
 
 
