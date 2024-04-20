@@ -13,7 +13,6 @@ function addToCollection(collection, title, artist, yearPublished) {
   return newAlbum; 
 };
 
-
 console.log('Album 1:', addToCollection(myCollection, 'Remember', 'Big Bang', 2008));
 console.table('album 2:', addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
 console.log('album 3:', addToCollection( myCollection,'Its Hyorish', 'Lee Hyori', 2008));
@@ -23,13 +22,13 @@ console.log('album 6:', addToCollection(myCollection,'Fallen Embers', 'Illenium'
 
 console.log('my collection:', myCollection);
 
-// function showCollection(collection) {
-//   for (let album in collection) {
-//     console.log('showing collection:', `${album.title} by ${album.artist} published in ${album.yearPublished}`);
+function showCollection(collection) {
+  for (let album of collection) {
+    console.log('showing collection:', `${album.title} by ${album.artist} published in ${album.yearPublished}`);
 
-//   }
-// }
-// console.log('show collection:', showCollection());
+  }
+};
+showCollection(myCollection);
 
 
 
