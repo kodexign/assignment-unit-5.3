@@ -34,16 +34,19 @@ showCollection(myCollection);
 
 console.log(':::FIND BY ARTIST:::');
 
- let matchingArtist = [];
-
 function findByArtist(collection, artist) {
-    if (artist === artist){
-     matchingArtist.push(collection);
-     return 
-    }
-    return matchingArtist;
+  let sameArtist = [];
+  for (let album of collection){  
+  if (album.artist === artist){
+     sameArtist.push(album);
+     return sameArtist;
   }
+  return sameArtist;
+}
+}
+findByArtist(myCollection, 'Big Bang');
   console.log( 'artist albums:', findByArtist(myCollection, 'Big Bang'));
+  console.log( 'artist albums:', findByArtist(myCollection, 'Taylor Swift'));
 
 
 
