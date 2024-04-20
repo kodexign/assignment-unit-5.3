@@ -14,8 +14,8 @@ function addToCollection(collection, title, artist, yearPublished) {
   return newAlbum;
 }
 
-console.log('Album 1:', addToCollection(myCollection, 'Remember', 'Big Bang', 2008));
-console.table('album 2:', addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
+console.log('album 1:', addToCollection(myCollection, 'Remember', 'Big Bang', 2008));
+console.table('album 2:',addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
 console.log('album 3:', addToCollection(myCollection, 'Its Hyorish', 'Lee Hyori', 2008));
 console.log('album 4:', addToCollection(myCollection, 'Still Fantasy', 'Jay Chou', 2006));
 console.log('album 5:', addToCollection(myCollection, 'In a World Like This', 'Backstreet Boys', 2013));
@@ -33,20 +33,39 @@ showCollection(myCollection);
 
 
 console.log(':::FIND BY ARTIST:::');
+console.table(myCollection);
 
 function findByArtist(collection, artist) {
   let sameArtist = [];
-  for (let album of collection){  
-  if (album.artist === artist){
-     sameArtist.push(album);
-     return sameArtist;
+  for (let album of collection) {
+    if (album.artist === artist) {
+      sameArtist.push(album);
+      return sameArtist;
+    }
+    return sameArtist;
   }
-  return sameArtist;
-}
+  
 }
 findByArtist(myCollection, 'Big Bang');
-  console.log( 'artist albums:', findByArtist(myCollection, 'Big Bang'));
-  console.log( 'artist albums:', findByArtist(myCollection, 'Taylor Swift'));
+console.log('artist albums:', findByArtist(myCollection, 'Big Bang'));
+console.log('artist albums:', findByArtist(myCollection, 'Taylor Swift'));
+
+console.log(':::STRETCH GOALS:::');
+ 
+
+
+function search(collection, searchCriteria = {}){
+let find = [];
+for (let album of colleciton) {
+  if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished){
+    find.push(album);
+    return find;
+  }
+  return collection;
+}
+}
+
+console.log( 'search:', search( myCollection, 'Big Bang', 2008));
 
 
 
