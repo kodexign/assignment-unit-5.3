@@ -31,7 +31,7 @@ function showCollection(collection) {
 }
 showCollection(myCollection);
 
-
+// not returning all albums...
 console.log(':::FIND BY ARTIST:::');
 console.table(myCollection);
 
@@ -50,11 +50,14 @@ findByArtist(myCollection, 'Big Bang');
 console.log('artist albums:', findByArtist(myCollection, 'Big Bang'));
 console.log('artist albums:', findByArtist(myCollection, 'Taylor Swift'));
 
+
 console.log(':::STRETCH GOALS:::');
- 
 
-
-function search(collection, searchCriteria = {}){
+let searchCriteria = {
+  artist,
+  yearPublished,
+}
+function search(collection, searchCriteria){
 let find = [];
 for (let album of colleciton) {
   if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished){
