@@ -40,35 +40,43 @@ function findByArtist(collection, artist) {
   for (let album of collection) {
     if (album.artist === artist) {
       sameArtist.push(album);
-      return sameArtist;
     }
-    return sameArtist;
   }
-  
+  return sameArtist;
 }
-findByArtist(myCollection, 'Big Bang');
-console.log('artist albums:', findByArtist(myCollection, 'Big Bang'));
-console.log('artist albums:', findByArtist(myCollection, 'Taylor Swift'));
+
+console.log('Big Bang albums:', findByArtist(myCollection, 'Big Bang'));
+console.log('Taylor albums:', findByArtist(myCollection, 'Taylor Swift'));
 
 
 console.log(':::STRETCH GOALS:::');
 
 let searchCriteria = {
-  artist,
-  yearPublished,
-}
-function search(collection, searchCriteria){
-let find = [];
-for (let album of colleciton) {
-  if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished){
-    find.push(album);
-    return find;
-  }
-  return collection;
-}
+  artist: 'Big Bang',
+  yearPublished: 2008,
 }
 
-console.log( 'search:', search( myCollection, 'Big Bang', 2008));
+function search(collection, searchCriteria){
+  if (!searchCriteria) {
+    return collection;
+  }
+  if (Object.keys(searchCriteria).length === 0){
+    return collection;
+  }
+  if (album.artist && album.yearPublished === 0) {
+    return collection;
+  }
+  // let find = [];
+// for (let album of collection) {
+//   if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished){
+//     find.push(album);
+//     return find;
+//   }
+//   return collection;
+// }
+}
+
+console.log( 'search:', search( myCollection, searchCriteria));
 
 
 
