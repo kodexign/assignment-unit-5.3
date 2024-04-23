@@ -51,39 +51,41 @@ console.log('Taylor albums:', findByArtist(myCollection, 'Taylor Swift'));
 
 console.log(':::STRETCH GOALS:::');
 
-//it doesn't work T-T
+//searchCriteria object
 let searchCriteria = {
-  artist: "Illenium",
+  artist: 'Illenium',
   yearPublished: 2021,
 }
 
+//search function with parameter of collection and searchCriteria
 function search(collection, searchCriteria) {
 
+    // if no search object
   if (!searchCriteria) {
-    console.log('no search object');
     return collection;
   }
+  //if empty search object
   if (Object.keys(searchCriteria).length === 0) {
-    console.log('empty search object');
     return collection;
   }
-  if (searchCriteria.artist || searchCriteria.yearPublished === 0) {
-    console.log('missing artist or yearPublished');
+  //if searchCriteria is missing artist or yearPublished
+  if (!searchCriteria.artist ||!searchCriteria.yearPublished) {
     return collection;
   }
-
   let find = [];
   for (let album of collection) {
-    if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished) {
+    //return new array of all items in the 'collection' matchting all searchCriteria
+    if (album.artist === searchCriteria.artist && album.yearPublished === searchCriteria.yearPublished) {
       find.push(album);
+      
     }
-    return find;
   }
-  return collection;
+ return find;
 }
 
 
-console.log('search Illenium:', search(myCollection, searchCriteria));
+console.log('search ' + searchCriteria.artist+ ':', search(myCollection, searchCriteria));
+
 
 
 
