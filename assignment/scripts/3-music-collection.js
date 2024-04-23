@@ -15,7 +15,7 @@ function addToCollection(collection, title, artist, yearPublished) {
 }
 
 console.log('album 1:', addToCollection(myCollection, 'Remember', 'Big Bang', 2008));
-console.table('album 2:',addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
+console.table('album 2:', addToCollection(myCollection, 'MADE', 'Big Bang', 2016));
 console.log('album 3:', addToCollection(myCollection, 'Its Hyorish', 'Lee Hyori', 2008));
 console.log('album 4:', addToCollection(myCollection, 'Still Fantasy', 'Jay Chou', 2006));
 console.log('album 5:', addToCollection(myCollection, 'In a World Like This', 'Backstreet Boys', 2013));
@@ -51,32 +51,39 @@ console.log('Taylor albums:', findByArtist(myCollection, 'Taylor Swift'));
 
 console.log(':::STRETCH GOALS:::');
 
+//it doesn't work T-T
 let searchCriteria = {
-  artist: 'Big Bang',
-  yearPublished: 2008,
+  artist: "Illenium",
+  yearPublished: 2021,
 }
 
-function search(collection, searchCriteria){
+function search(collection, searchCriteria) {
+
   if (!searchCriteria) {
+    console.log('no search object');
     return collection;
   }
-  if (Object.keys(searchCriteria).length === 0){
+  if (Object.keys(searchCriteria).length === 0) {
+    console.log('empty search object');
     return collection;
   }
-  if (album.artist && album.yearPublished === 0) {
+  if (searchCriteria.artist || searchCriteria.yearPublished === 0) {
+    console.log('missing artist or yearPublished');
     return collection;
   }
-  // let find = [];
-// for (let album of collection) {
-//   if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished){
-//     find.push(album);
-//     return find;
-//   }
-//   return collection;
-// }
+
+  let find = [];
+  for (let album of collection) {
+    if (album.artist && album.yearPublished === searchCriteria.artist && searchCriteria.yearPublished) {
+      find.push(album);
+    }
+    return find;
+  }
+  return collection;
 }
 
-console.log( 'search:', search( myCollection, searchCriteria));
+
+console.log('search Illenium:', search(myCollection, searchCriteria));
 
 
 
