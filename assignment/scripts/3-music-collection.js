@@ -84,7 +84,7 @@ function search(collection, searchCriteria) {
 }
 
 
-console.log('search ' + searchCriteria.artist+ ':', search(myCollection, searchCriteria));
+console.log(`search ${searchCriteria.artist}:`, search(myCollection, searchCriteria));
 
 
 
